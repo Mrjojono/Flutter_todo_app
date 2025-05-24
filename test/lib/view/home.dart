@@ -3,6 +3,8 @@ import 'package:remixicon/remixicon.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+ 
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +80,7 @@ class Contact {
   final String name;
   final String role;
   final Color color;
-  final String initial;
 
-  Contact(this.name, this.role, this.color)
-      : initial = name.isNotEmpty ? name[0] : '?';
-
+  Contact(this.name, this.role, this.color);
 }
 //scale fold joue le role d'une base pour notre application

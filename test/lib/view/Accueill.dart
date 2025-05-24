@@ -91,8 +91,14 @@ class Accueill extends StatelessWidget {
                     ),
                     border: OutlineInputBorder(gapPadding: 20),
                   ),
+                ),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    // Action à faire lors du clic
+                  },
+                  child: Text("Add task"),
                 )
-
               ],
             ))
           ],

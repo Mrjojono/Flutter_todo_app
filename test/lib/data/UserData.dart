@@ -1,5 +1,7 @@
 import 'package:test/modal/user.dart';
-
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 List<User> listUser = [
   User(
       id: 1,
@@ -7,7 +9,8 @@ List<User> listUser = [
       post: 'Manager',
       numero: 92938764,
       email: 'joana@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.grey
   ),
   User(
       id: 2,
@@ -15,7 +18,8 @@ List<User> listUser = [
       post: 'Développeur',
       numero: 91482736,
       email: 'michael.dev@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.green
   ),
   User(
       id: 3,
@@ -23,7 +27,8 @@ List<User> listUser = [
       post: 'Designer UI/UX',
       numero: 97361284,
       email: 'amina.uiux@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.brown
   ),
   User(
       id: 4,
@@ -31,7 +36,8 @@ List<User> listUser = [
       post: 'Technicien réseau',
       numero: 90124578,
       email: 'karim.reseau@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.deepPurple
   ),
   User(
       id: 5,
@@ -39,7 +45,8 @@ List<User> listUser = [
       post: 'Chargée RH',
       numero: 96378245,
       email: 'sophie.rh@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.red
   ),
   User(
       id: 6,
@@ -47,7 +54,8 @@ List<User> listUser = [
       post: 'Chef de projet',
       numero: 98541326,
       email: 'luc.projet@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.lightGreenAccent
   ),
   User(
       id: 7,
@@ -55,7 +63,8 @@ List<User> listUser = [
       post: 'Analyste',
       numero: 91726548,
       email: 'fatou.analyste@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.black
   ),
   User(
       id: 8,
@@ -63,7 +72,8 @@ List<User> listUser = [
       post: 'Comptable',
       numero: 95673210,
       email: 'jean.compta@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.blueGrey
   ),
   User(
       id: 9,
@@ -71,7 +81,8 @@ List<User> listUser = [
       post: 'Assistante',
       numero: 94567213,
       email: 'nadia.assist@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.yellow
   ),
   User(
       id: 10,
@@ -79,6 +90,7 @@ List<User> listUser = [
       post: 'Développeur',
       numero: 93458172,
       email: 'yao.dev@gmail.com',
-      profil: ''
+      profil: '',
+      color: Colors.blue
   ),
 ];

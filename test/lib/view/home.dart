@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
+import 'package:test/data/UserData.dart';
+import 'package:test/components/DrawerComponent.dart';
+import 'details.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,6 +13,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child:  Scaffold(
+        appBar: AppBar(
+        ),
+        drawer: DrawerComponent(),
         body: Column(
           children: [
             Padding(
@@ -46,28 +52,40 @@ class Home extends StatelessWidget {
             Divider(height: 20,),
             Expanded(child: ListView.separated(
                 itemBuilder:(context, index) {
-                 return ListTile(
-
-                    leading: CircleAvatar(radius: 30,),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min ,
-                      children: [
-                        Icon(Icons.call),
-                        SizedBox(width: 10,),
-                        Icon(Icons.email),
-                      ],
+                 return GestureDetector(
+                   onTap: (){
+                     Navigator.push(context,
+                            MaterialPageRoute (
+                                builder: (context) => Details(user: listUser[index],)) ) ;
+                   },
+                   child: ListTile(
+                      leading: CircleAvatar(radius: 30,
+                        backgroundColor: listUser[index].color,
+                        child: Text(listUser[index].nom[0],
+                        style: TextStyle(color: Colors.white, fontSize: 21),
+                        ),
+                      ),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min ,
+                        children: [
+                          Icon(Icons.call),
+                          SizedBox(width: 10,),
+                          Icon(Icons.email),
+                        ],
+                      ),
+                      title: Text(listUser[index].nom,
+                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Text(listUser[index].post),// subtitle est le sous titre
+                   
                     ),
-                    title: Text('name',
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text('number'),// subtitle est le sous titre
 
-                  );
+                 );
                 },
                 separatorBuilder:(context,index){
                   return Divider(height: 20,);
                 },
-                itemCount:15
+                itemCount: listUser.length
             ))
           ],
         ),
@@ -75,6 +93,7 @@ class Home extends StatelessWidget {
     );
   }
 }
+
 
 class Contact {
   final String name;

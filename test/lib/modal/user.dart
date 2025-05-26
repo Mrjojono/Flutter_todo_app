@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class User {
   int id;
   String nom;
@@ -5,7 +7,7 @@ class User {
   num numero;
   String email;
   String profil;
-
+  Color color;
   User({
     required this.id,
     required this.nom,
@@ -13,6 +15,7 @@ class User {
     required this.numero,
     required this.email,
     required this.profil,
+    required this.color,
   });
 
 }

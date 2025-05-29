@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test/view/Accueill.dart';
+import 'package:test/view/calculator.dart';
 
 import '../view/task.dart';
 import '../view/Login.dart';
@@ -19,11 +21,7 @@ class DrawerComponent extends StatelessWidget {
             accountName: Text("username"),
             accountEmail: Text("email"),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.lightBlue, Colors.deepPurpleAccent],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              color: Colors.green
             ),
           ),
 
@@ -31,7 +29,10 @@ class DrawerComponent extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text("Accueil"),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Accueill()),
+              );
             },
           ),
 
@@ -52,6 +53,16 @@ class DrawerComponent extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const Home()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.calculate),
+            title: Text("Calculator"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Calculator()),
               );
             },
           ),

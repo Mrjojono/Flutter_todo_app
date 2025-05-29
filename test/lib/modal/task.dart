@@ -2,7 +2,7 @@ class Task{
   int id;
   String Title;
   String Description;
-  String DateTofinal;
+  DateTime DateTofinal;
   int UserId;
 
   Task({

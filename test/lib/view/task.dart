@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:test/data/userTask.dart';
 class Task extends StatelessWidget {
   const Task({super.key});
 
@@ -24,19 +24,19 @@ class Task extends StatelessWidget {
                       ],
                     ),
                     title: Text(
-                      "Task to do",
+                      listTask[index].Title,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
                       ),
                     ),
-                    subtitle: Text("small description with do time"),
+                    subtitle: Text(listTask[index].Description),
                   );
                 },
                 separatorBuilder: (context, index) {
                   return Divider(height: 10);
                 },
-                itemCount: 20,
+                itemCount: listTask.length,
               ),
             ),
           ],

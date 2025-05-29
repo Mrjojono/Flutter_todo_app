@@ -40,6 +40,16 @@ class Accueill extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
 
+                TextField(decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Ajouter la description de vos tache",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+
+                ),
+                ),
+                SizedBox(height: 16),
                 ElevatedButton(onPressed:  () async {
                   DateTime? pickedDate = await showDatePicker(
                     context: context,
@@ -52,15 +62,32 @@ class Accueill extends StatelessWidget {
                     DateTime DateSelectionner  =  pickedDate.toLocal();
                     print(DateSelectionner);
                   }
-                }, child: Text("choisir une date"),
+                },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(350, 50),
+                    // width: 250, height: 50
+                    backgroundColor: Color(0xff040c0a),
+                    foregroundColor: Colors.white,
+                    shadowColor: Colors.grey,
+                    textStyle: TextStyle(fontSize: 20),
+                  ),
+                  child: Text("choisir une date"),
 
                 ),
-                SizedBox(height: 16),
-
+                SizedBox(height: 20,),
                 ElevatedButton(
                   onPressed: () {
                     // Action à faire lors du clic
                   },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(350, 50),
+                    backgroundColor:
+                      Colors.green,
+                    foregroundColor: Colors.white,
+                    shadowColor: Colors.grey,
+                    textStyle: TextStyle(fontSize: 20),
+                    // width: 250, height: 50
+                  ),
                   child: Text("Add task"),
                 )
               ],

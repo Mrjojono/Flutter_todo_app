@@ -27,7 +27,6 @@ class Home extends StatelessWidget {
                     'All contact',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  Icon(Icons.login_outlined),
                 ],
               ),
             ),
